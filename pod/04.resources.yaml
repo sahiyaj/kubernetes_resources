@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress
+spec:
+ containers:
+ - image: techworldwithsiva/stress
+   imagePullPlicy: Always
+   name: nginx
+   ports:
+    - containerPort: 80
