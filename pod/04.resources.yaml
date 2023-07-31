@@ -6,6 +6,5 @@ spec:
  containers:
  - image: techworldwithsiva/stress
    imagePullPlicy: Always
-   name: nginx
-   ports:
-    - containerPort: 80
+   name: stress
+   
