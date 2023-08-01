@@ -24,9 +24,9 @@ kind: Pod
 metadata:
   name: config-pod
 spec:
-  containers:
-  - name: nginx
-    image: nginx
-    envFrom:
-     - configfMapRef:
-         name: course-config        
+ containers:
+ - name: nginx
+   image: nginx
+   envFrom:
+    - configfMapRef:
+        name: course-config        
