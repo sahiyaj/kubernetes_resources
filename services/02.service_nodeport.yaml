@@ -17,7 +17,7 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  type: NOdePort
+  type: NodePort
   selector:
     server: nginx
   ports:
