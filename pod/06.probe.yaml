@@ -12,3 +12,8 @@ spec:
         port: 80
       initialDelaySeconds: 5
       periodSeconds: 10
+    readinessProbe:
+      tcpSocket:
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10  
