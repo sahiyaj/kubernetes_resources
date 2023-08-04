@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        tire: web
+        tier: web
     spec:
       containers:
       - name: nginx
