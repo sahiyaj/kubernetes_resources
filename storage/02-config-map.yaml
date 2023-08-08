@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: nginx-conf
 data:
-  nginx.conf: |
+  nnginx.conf: |
     # this config is loading from nginx config map
     user nginx;
     worker_processes auto;

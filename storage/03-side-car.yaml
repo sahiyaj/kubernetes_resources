@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: filebeat-conf
+data:
+  filebeat.yaml: |-
+    filebeat.inputs:
+    - type: log
+      enabled: true
+      paths:
+        - var/log/nginx/access.log
+        - var/log/nginx/error.log
+
+    output.elasticsearch:
+      host: ["elasticsearch:9200"]       
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-filebeat
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      volumeMounts:
+        - name: nginx-log
+          mountPath: /var/log/nginx
+    - name: filebeat
+      image: docker.elastic.co/beats/filebeat:7.16.3
+      volumeMounts:
+        - name: filebeat-config
+          mountPath: /usr/share/filebeat/filebeat.yml
+          subPath: filebeat.yml
+        - name: nginx-log
+          mountPath: /var/log/nginx      
+  volumes:
+    - name: filebeat-conf
+      configMap:
+        name: filebeat-conf
+    - name: nginx-log
+      emptyDir: {}            
