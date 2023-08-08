@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: filebeat-config
 data:
-  filebeat.yaml: |-
+  filebeat.yml: |-
     filebeat.inputs:
     - type: log
       enabled: true
