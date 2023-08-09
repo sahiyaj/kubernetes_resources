@@ -1,0 +1,26 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: roboshop
+  name: roboshop-developer
+rules:
+  - apiGroups: [""] 
+    resources: ["deployments","services","secrets","configmaps"]
+    verbs: ["get","watch","list","update","create","delete"]
+  - apiGroups: [""] 
+    resources: ["pods"]
+    verbs: [list","get","watch"]  
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: roboshop-developer-rolebinding
+  namespace: roboshop
+subjects:
+- kind: User
+  name: lohia
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: roboshop-developer
+  apiGroup: rbac.authorization.k8s.io
