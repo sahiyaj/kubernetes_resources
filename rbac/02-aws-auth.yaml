@@ -10,8 +10,7 @@ data:
     - userarn: arn:aws:iam::464117734641:user/roboshop-admin
       username: roboshop-admin
     - userarn: arn:aws:iam::464117734641:user/ramesh
-      username: ramesh  
-       
+      username: ramesh         
 kind: ConfigMap
 metadata:
   annotations:
