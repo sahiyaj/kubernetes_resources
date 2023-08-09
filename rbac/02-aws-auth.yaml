@@ -11,13 +11,15 @@ data:
       username: roboshop-admin
     - userarn: arn:aws:iam::464117734641:user/ramesh
       username: ramesh
+    - userarn: arn:aws:iam::464117734641:user/lohia
+      username: lohia  
 kind: ConfigMap
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","data":{"mapRoles":"- groups:\n  - system:bootstrappers\n  - system:nodes\n  rolearn: arn:aws:iam::464117734641:role/eksctl-eks-cluster-nodegroup-eks-NodeInstanceRole-CJ94YS921VRF\n  username: system:node:{{EC2PrivateDNSName}}\n","mapUsers":"- userarn: arn:aws:iam::464117734641:user/roboshop-admin\n  username: roboshop-admin  \n"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2023-08-09T16:08:30Z","name":"aws-auth","namespace":"kube-system","resourceVersion":"1199","uid":"e64b47f3-13df-4509-89f3-eddee827b718"}}
-  creationTimestamp: "2023-08-09T16:08:30Z"
+      {"apiVersion":"v1","data":{"mapRoles":"- groups:\n  - system:bootstrappers\n  - system:nodes\n  rolearn: arn:aws:iam::464117734641:role/eksctl-eks-cluster-nodegroup-eks-NodeInstanceRole-CJ94YS921VRF\n  username: system:node:{{EC2PrivateDNSName}}\n","mapUsers":"- userarn: arn:aws:iam::464117734641:user/roboshop-admin\n  username: roboshop-admin\n- userarn: arn:aws:iam::464117734641:user/ramesh\n  username: ramesh\n"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2023-08-09T16:08:30Z","name":"aws-auth","namespace":"kube-system","resourceVersion":"8864","uid":"e64b47f3-13df-4509-89f3-eddee827b718"}}
+  creationTimestamp: "2023-08-09T17:47:23Z"
   name: aws-auth
   namespace: kube-system
-  resourceVersion: "8864"
-  uid: e64b47f3-13df-4509-89f3-eddee827b718
+  resourceVersion: "14993"
+  uid: 77104d85-02b9-4a21-a8c6-81b0b76e54b2
